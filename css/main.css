@@ -1,0 +1,134 @@
+html,
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 20vh 70vh 10vh;
+  grid-template-areas:
+    "h a"
+    "m a"
+    "f f";
+}
+header {
+  grid-area: h;
+  background: yellow;
+}
+main {
+  grid-area: m;
+  background: blue;
+}
+aside {
+  grid-area: a;
+  background: green;
+}
+footer {
+  grid-area: f;
+  background: red;
+}
+/* ============================= */
+/* 
+.main {
+  width: 62%;
+  background-image: url("../images/bg-pattern-desktop.svg");
+  background-size: cover;
+}
+.aside {
+  width: 38%;
+}
+.aside-img {
+  width: 100%;
+  height: 100vh;
+  background-image: url("../images/hero-desktop.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+.nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-content: stretch;
+  height: 150px;
+  padding: 0 10rem;
+}
+.nav-brand {
+  align-self: stretch;
+  margin: auto 0;
+}
+.logo {
+  width: 150px;
+}
+
+.main {
+  height: 100%;
+  padding: 1rem 10rem;
+}
+.main-title {
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 300;
+  font-size: 60px;
+  color: #ce9797;
+  text-transform: uppercase;
+  letter-spacing: 30px;
+  line-height: 70px;
+}
+.main-title span {
+  color: #413a3a;
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 700;
+}
+.main-text {
+  font-family: "Josefin Sans", sans-serif;
+  color: #ce9797;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 30px;
+  width: 500px;
+}
+.email-input {
+  width: 70%;
+
+  height: 50px;
+  font-size: 25px;
+  border-radius: 50px;
+  border: solid 1.5px #ce979741;
+  padding-right: 1.5rem;
+  padding-left: 1.5rem;
+  color: #ce9797;
+  outline: none;
+}
+.email-input::placeholder {
+  color: #ce9797;
+} */
+/* 
+@media screen and (max-width: 1440px) {
+  body {
+    overflow: auto;
+  }
+  .main-container {
+    flex-direction: column-reverse;
+  }
+  .grid-left {
+    width: 100%;
+  }
+  .grid-right {
+    width: 100%;
+  }
+  .img-div {
+    width: 100%;
+    height: 400px;
+    background-image: url("../images/hero-mobile.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    object-fit: cover;
+    object-position: top center;
+  }
+} */
