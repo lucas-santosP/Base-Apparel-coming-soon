@@ -13,7 +13,7 @@
       rel="icon"
       type="image/png"
       sizes="32x32"
-      href="./images/favicon-32x32.png"
+      href="./assets/images/favicon-32x32.png"
     />
     <title>Frontend Mentor | Base Apparel coming soon page</title>
   </head>
@@ -22,14 +22,14 @@
       <header>
         <nav class="header-nav">
           <a href="" class="nav-link"
-            ><img class="logo" src="images/logo.svg" alt=""
+            ><img class="logo" src="./assets/images/logo.svg" alt=""
           /></a>
         </nav>
       </header>
 
       <main class="main">
         <img
-          src="images/hero-mobile.jpg"
+          src="./assets/images/hero-mobile.jpg"
           class="aside-img aside-img-mob"
           alt=""
         />
@@ -42,19 +42,22 @@
             store. Add your email below to stay up-to-date with anoouncements
             and our launch deals.
           </p>
-          <input type="email" class="email-input" placeholder="Email Adress" />
+          <div class="input-group">
+            <input
+              type="email"
+              class="email-input"
+              placeholder="Email Adress"
+            />
+            <button class="email-btn"></button>
+          </div>
+          <p class="erro-text"></p>
         </section>
       </main>
 
       <aside class="aside">
         <div class="aside-div">
-          <!-- <img
-            src="images/hero-mobile.jpg"
-            class="aside-img aside-img-mob"
-            alt=""
-          /> -->
           <img
-            src="images/hero-desktop.jpg"
+            src="./assets/images/hero-desktop.jpg"
             class="aside-img aside-img-desk"
             alt=""
           />
@@ -69,10 +72,12 @@
               href="https://www.frontendmentor.io?ref=challenge"
               target="_blank"
               >Frontend Mentor</a
-            >. Coded by <a href="#">Lucas Santos P</a>.
+            >. Coded by
+            <a href="https://github.com/lucas-santosP">Lucas Santos P</a>.
           </p>
         </nav>
       </footer>
     </div>
+    <script src="src/main.js"></script>
   </body>
 </html>
