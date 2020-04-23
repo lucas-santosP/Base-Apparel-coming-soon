@@ -10,6 +10,20 @@ body {
   height: 100%;
   overflow: hidden;
 }
+:root {
+  --clr-primary: #ce9797;
+  --clr-secondary: #413a3a;
+  /* title */
+  --fs-title: clamp(2.5rem, 5vw, 4rem);
+  --lh-title: clamp(3rem, 6vw, 4.5rem);
+  --ls-title: clamp(1rem, 2.5vw, 1.5rem);
+  /* text */
+  --fs-text: clamp(1rem, 1vw, 1.1rem);
+  --lh-text: 2rem;
+  /* btn & input */
+  --wd-pd-btn: clamp(50px, 20%, 150px);
+  --mg-btn: clamp(-150px, -20%, -50px); /* negative margin-left of btn*/
+}
 .container {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -18,11 +32,18 @@ body {
     "h a"
     "m a"
     "f f";
+}
+.img-bg {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: -5;
   background-image: url("../assets/images/bg-pattern-desktop.svg");
   background-size: cover;
-  background-position: right;
+  background-position: top left;
+  padding: 0;
+  opacity: 0.6;
 }
-
 header {
   display: flex;
   justify-content: stretch;
@@ -55,16 +76,6 @@ footer {
 .logo {
   width: 160px;
 }
-:root {
-  --clr-primary: #ce9797;
-  --clr-secondary: #413a3a;
-  --fs-title: clamp(2.5rem, 5vw, 4rem);
-  --lh-title: clamp(3rem, 6vw, 4.5rem);
-  --ls-title: clamp(1rem, 2.5vw, 1.5rem);
-  /* text */
-  --fs-text: clamp(1rem, 1vw, 1.1rem);
-  --lh-text: 2rem;
-}
 /* MAIN ============================= */
 .main-form {
   padding: 0 0 0 7vw;
@@ -86,7 +97,7 @@ footer {
   font-weight: 700;
 }
 .main-text {
-  width: 90%;
+  width: 85%;
   margin: 1rem 0;
   padding: 0;
   font-family: "Josefin Sans", sans-serif;
@@ -97,17 +108,16 @@ footer {
 }
 .input-group {
   width: 100%;
-  display: flex;
 }
 .email-input {
   width: 90%;
   height: 55px;
   margin: 1rem 0 0 0;
-  padding-right: 130px;
-  padding-left: 1.5rem;
+  padding-right: var(--wd-pd-btn);
+  padding-left: 1rem;
   font-size: var(--fs-text);
-  border-radius: 50px;
   color: var(--clr-secondary);
+  border-radius: 50px;
   border: solid 1.5px hsla(0, 80%, 86%, 0.691);
   outline: none;
 }
@@ -115,17 +125,19 @@ footer {
   color: #ce9797a6;
 }
 .email-input-erro {
-  border: solid 1.5px #f96262;
+  border-color: #f96262;
 }
 .email-input-erro::placeholder {
   color: #f96262;
 }
 .email-btn {
-  height: inherit;
-  width: 130px;
-  margin: 1rem 0 0 -130px;
+  position: relative;
+  top: 3.5px; /* size of the border */
+  height: 55px;
+  width: var(--wd-pd-btn);
+  margin: 1rem 0 0 var(--mg-btn);
   border: none;
-  box-shadow: 0 5px 10px 0 hsl(0, 36%, 70%, 50%);
+  box-shadow: 0px 0px 20px 5px #ce979771;
   background-image: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
   border-radius: 40px;
   cursor: pointer;
@@ -133,10 +145,11 @@ footer {
 }
 .email-btn:hover {
   background-image: none;
+  box-shadow: 0px 0px 20px 0px #ce979780;
   background-color: hsl(0, 80%, 86%);
-  transform: scale(1.02);
+  /* transform: scale(1.02);
+  top: 6px; */
 }
-
 .email-text {
   font-family: "Josefin Sans", sans-serif;
   font-size: 0.9rem;
@@ -191,21 +204,9 @@ footer {
 .hide-class {
   visibility: hidden;
 }
-/* REPONSIVIDADE ============================= */
-/* LARGE */
-@media screen and (max-width: 1250px) and (min-width: 1001px) {
-  .aside-img-desk {
-    object-position: center right;
-  }
-  .main-text {
-    width: 95%;
-  }
-  .email-input {
-    width: 95%;
-  }
-}
+
 /* MID */
-@media screen and (max-width: 1000px) and (min-width: 769px) {
+@media screen and (max-width: 1265px) and (min-width: 769px) {
   .container {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 20vh 75vh 5vh;
@@ -216,22 +217,20 @@ footer {
   }
   .main-form,
   .header-nav {
-    padding-left: 4vw;
+    padding-left: 5vw;
   }
   .aside-img-desk {
     object-position: top right;
   }
   .main-text {
-    width: 100%;
+    width: 95%;
   }
   .email-input {
     width: 95%;
     height: 55px;
-    padding-right: 100px;
   }
   .email-btn {
-    width: 100px;
-    margin-left: -100px;
+    height: 55px;
   }
 }
 /* MOBILE */
@@ -248,9 +247,12 @@ footer {
       "m m"
       "f f";
   }
+  .img-bg {
+    display: none;
+  }
   .header-nav {
-    justify-content: center;
     padding: 0;
+    justify-content: center;
   }
   /* main */
   .main-form {
@@ -258,25 +260,16 @@ footer {
     padding-bottom: 2.5rem;
     text-align: center;
   }
-  .input-group {
-    flex-direction: column;
-    justify-content: center;
-    align-content: center;
-  }
   .main-text {
     text-align: center;
-    width: 100%;
+    margin: 1rem auto;
   }
   .email-input {
     height: 45px;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
     margin: 1rem auto;
   }
   .email-btn {
-    width: 130px;
     height: 45px;
-    margin: auto;
   }
   .email-text {
     text-align: center;
