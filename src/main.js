@@ -61,6 +61,7 @@ document.querySelector("body").onclick = (e) => {
 input_email.addEventListener("keydown", () => {
   DebouceEvent(handleEmail, 400);
 });
-btn.addEventListener("click", () => {
+btn.addEventListener("click", (e) => {
+  e.preventDefault();
   if (handleEmail()) showSucees();
 });
