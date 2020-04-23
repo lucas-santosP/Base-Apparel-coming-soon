@@ -1,3 +1,6 @@
+* {
+  box-sizing: border-box;
+}
 html,
 body {
   box-sizing: border-box;
@@ -55,15 +58,12 @@ footer {
 :root {
   --clr-primary: #ce9797;
   --clr-secondary: #413a3a;
-  --fs-title: clamp(2.5rem, 5vw, 4.5rem);
-  --lh-title: clamp(3rem, 6vw, 5.5rem);
+  --fs-title: clamp(2.5rem, 5vw, 4rem);
+  --lh-title: clamp(3rem, 6vw, 4.5rem);
   --ls-title: clamp(1rem, 2.5vw, 2rem);
   /* text */
-  --fs-text: clamp(1rem, 2.3vw, 1.3rem);
+  --fs-text: clamp(1.1rem, 2vw, 1.3rem);
   --lh-text: 2rem;
-  /* --fs-text: 1.2rem; */
-  /* --ls-title: 2rem; */
-  /* title  4.5rem;*/
 }
 /* MAIN ============================= */
 .main-form {
@@ -86,8 +86,9 @@ footer {
   font-weight: 700;
 }
 .main-text {
-  width: 75%;
+  width: 90%;
   margin: 1rem 0;
+  padding: 0;
   font-family: "Josefin Sans", sans-serif;
   color: #ce9797ea;
   font-size: var(--fs-text);
@@ -95,14 +96,14 @@ footer {
   font-weight: 400;
 }
 .email-input {
-  width: 70%;
+  width: 90%;
   height: 60px;
   margin: 1rem 0 0 0;
-  padding-right: 110px;
+  padding-right: 130px;
   padding-left: 1.5rem;
   font-size: var(--fs-text);
   border-radius: 50px;
-  color: var(--clr-primary);
+  color: var(--clr-secondary);
   border: solid 1.5px #ce979741;
   outline: none;
 }
@@ -177,7 +178,7 @@ footer {
   margin: auto 0;
   font-family: "Josefin Sans", sans-serif;
   color: var(--clr-primary);
-  font-size: 0.9rem;
+  font-size: 0.75rem;
   font-weight: 400;
   line-height: 30px;
   text-decoration: none;
@@ -185,21 +186,20 @@ footer {
 .footer-text a {
   color: #fff;
 }
+.hide-class {
+  visibility: hidden;
+}
 /* REPONSIVIDADE ============================= */
 /* LARGE */
 @media screen and (max-width: 1250px) and (min-width: 1001px) {
-  .main-form,
-  .header-nav {
-    /* padding: 0 0 0 3rem; */
-  }
   .aside-img-desk {
     object-position: center right;
   }
   .main-text {
-    width: 85%;
+    width: 100%;
   }
   .email-input {
-    width: 58%;
+    width: 100%;
   }
 }
 /* MID */
@@ -212,22 +212,28 @@ footer {
       "m a"
       "f f";
   }
+  .main-form,
+  .header-nav {
+    padding-left: 4vw;
+  }
   .aside-img-desk {
     object-position: top right;
   }
   .main-text {
-    width: 85%;
+    width: 100%;
   }
   .email-input {
-    width: 55%;
-    height: 50px;
+    width: 95%;
+    height: 55px;
+    padding-right: 100px;
+  }
+  .email-btn {
+    width: 100px;
+    margin-left: -100px;
   }
 }
 /* MOBILE */
 @media screen and (max-width: 768px) {
-  .header-nav {
-    padding: 0;
-  }
   .container {
     background-image: linear-gradient(
       135deg,
@@ -242,25 +248,26 @@ footer {
   }
   .header-nav {
     justify-content: center;
+    padding: 0;
   }
   /* main */
   .main-form {
     padding: 0 1.5rem;
-    padding-bottom: 5rem;
+    padding-bottom: 2.5rem;
     text-align: center;
-  }
-  .main-text {
-    text-align: center;
-    width: 100%;
-    margin: 0;
   }
   .input-group {
     flex-direction: column;
     justify-content: center;
     align-content: center;
   }
+  .main-text {
+    text-align: center;
+    width: 100%;
+  }
   .email-input {
     height: 45px;
+    padding-left: 1.5rem;
     padding-right: 1.5rem;
     margin: 1rem auto;
   }
@@ -273,17 +280,15 @@ footer {
     text-align: center;
   }
   /* aside */
-  .aside-img {
-    max-width: 600px;
-    height: auto;
-    margin: 0 auto;
-  }
   .aside-img-desk {
     display: none;
   }
   .aside-img-mob {
     display: block;
     object-fit: contain;
+    max-width: 600px;
+    height: auto;
+    margin: 0 auto;
   }
   /* footer */
   .footer-nav {
@@ -291,79 +296,7 @@ footer {
     justify-content: center;
   }
   .footer-text {
-    font-size: 0.7rem;
-    padding: 0;
-  }
-}
-.hide-class {
-  display: none;
-  visibility: hidden;
-}
-/* @media screen and (max-width: 576px) {
-  .container {
-    grid-template-rows: 10vh 85vh 5vh;
-    grid-template-areas:
-      "h h"
-      "m m"
-      "f f";
-  }
-  .aside-img {
-    margin: 0 auto;
-    width: auto;
-    height: auto;
-  }
-  .aside-img-desk {
-    display: none;
-  }
-  .aside-img-mob {
-    display: block;
-  }
-
-  .footer-nav {
-    padding: 0 0.5rem;
-    justify-content: center;
-  }
-  .footer-text {
-    font-size: 0.7rem;
-    padding: 0;
-  }
-} 
-
-/* @media screen and (max-width: 925px) {
-  .container {
-    grid-template-rows: 100px 400px 500px 50px;
-    grid-template-areas:
-      "h h"
-      "a a"
-      "m m"
-      "f f";
-  }
-  .aside-img {
-    display: block;
-    height: 100%;
-    width: 100%;
-    background-image: url("../images/hero-desktop.jpg");
-    background-repeat: no-repeat;
-    background-position: top left;
-    background-size: cover;
-  }
-
-  .header-nav {
-    justify-content: center;
-    padding: 0;
-  }
-  main {
-    padding: 0 1rem;
     text-align: center;
+    font-size: 0.7rem;
   }
-  .main-title {
-    font-size: 3rem;
-    letter-spacing: 20px;
-  }
-  .main-text {
-    width: 100%;
-  }
-  .footer-text {
-    font-size: 12px;
-  }
-} */
+}
