@@ -14,11 +14,11 @@ body {
   --clr-primary: #ce9797;
   --clr-secondary: #413a3a;
   /* title */
-  --fs-title: clamp(2.5rem, 5vw, 4rem);
-  --lh-title: clamp(3rem, 6vw, 4.5rem);
+  --fs-title: clamp(2.5rem, 3.5vw, 4rem);
+  --lh-title: clamp(3rem, 4vw, 4.5rem);
   --ls-title: clamp(1rem, 2.5vw, 1.5rem);
   /* text */
-  --fs-text: clamp(1rem, 1vw, 1.1rem);
+  --fs-text: clamp(1rem, 1vw, 1.3rem);
   --lh-text: 2rem;
   /* btn & input */
   --wd-pd-btn: clamp(50px, 20%, 150px);
@@ -98,6 +98,7 @@ footer {
 }
 .main-text {
   width: 85%;
+  max-width: 500px;
   margin: 1rem 0;
   padding: 0;
   font-family: "Josefin Sans", sans-serif;
@@ -111,6 +112,7 @@ footer {
 }
 .email-input {
   width: 90%;
+  max-width: 500px;
   height: 55px;
   margin: 1rem 0 0 0;
   padding-right: var(--wd-pd-btn);
