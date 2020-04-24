@@ -1,3 +1,5 @@
+/* prefixed by https://autoprefixer.github.io (PostCSS: v7.0.26, autoprefixer: v9.7.3) */
+
 * {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
@@ -38,8 +40,11 @@ body {
   opacity: 0.6;
 }
 .container {
+  display: -ms-grid;
   display: grid;
+  -ms-grid-columns: 1fr 1fr;
   grid-template-columns: 1fr 1fr;
+  -ms-grid-rows: 20vh 75vh 5vh;
   grid-template-rows: 20vh 75vh 5vh;
   grid-template-areas:
     "h a"
@@ -48,27 +53,55 @@ body {
 }
 
 header {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: stretch;
+  -webkit-justify-content: stretch;
+  -ms-flex-pack: stretch;
   justify-content: stretch;
   grid-area: h;
 }
 main {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
   grid-area: m;
   overflow-y: auto;
   overflow-x: hidden;
 }
 aside {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 2;
   grid-area: a;
 }
 footer {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
   grid-area: f;
 }
 
 /* HEADER ============================= */
 .header-nav {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-box-pack: start;
+  -webkit-justify-content: start;
+  -ms-flex-pack: start;
   justify-content: start;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
   align-content: stretch;
   width: 100%;
   padding: 0 0 0 7vw;
@@ -82,6 +115,8 @@ footer {
 /* MAIN ============================= */
 .main-form {
   padding: 0 0 0 7vw;
+  height: -webkit-max-content;
+  height: -moz-max-content;
   height: max-content;
 }
 .main-title {
@@ -126,11 +161,35 @@ footer {
   border: solid 1.5px hsla(0, 80%, 86%, 0.691);
   outline: none;
 }
+.email-input::-webkit-input-placeholder {
+  color: #ce9797a6;
+}
+.email-input::-moz-placeholder {
+  color: #ce9797a6;
+}
+.email-input:-ms-input-placeholder {
+  color: #ce9797a6;
+}
+.email-input::-ms-input-placeholder {
+  color: #ce9797a6;
+}
 .email-input::placeholder {
   color: #ce9797a6;
 }
 .email-input-erro {
   border-color: #f96262;
+}
+.email-input-erro::-webkit-input-placeholder {
+  color: #f96262;
+}
+.email-input-erro::-moz-placeholder {
+  color: #f96262;
+}
+.email-input-erro:-ms-input-placeholder {
+  color: #f96262;
+}
+.email-input-erro::-ms-input-placeholder {
+  color: #f96262;
 }
 .email-input-erro::placeholder {
   color: #f96262;
@@ -142,7 +201,13 @@ footer {
   width: var(--wd-pd-btn);
   margin: 1rem 0 0 var(--mg-btn);
   border: none;
+  -webkit-box-shadow: 0px 0px 20px 5px #ce979771;
   box-shadow: 0px 0px 20px 5px #ce979771;
+  background-image: -o-linear-gradient(
+    315deg,
+    hsl(0, 80%, 86%),
+    hsl(0, 74%, 74%)
+  );
   background-image: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
   border-radius: 40px;
   cursor: pointer;
@@ -150,10 +215,11 @@ footer {
 }
 .email-btn:hover {
   background-image: none;
+  -webkit-box-shadow: 0px 0px 20px 0px #ce979780;
   box-shadow: 0px 0px 20px 0px #ce979780;
   background-color: hsl(0, 80%, 86%);
   /* transform: scale(1.02);
-  top: 6px; */
+    top: 6px; */
 }
 .email-text {
   font-family: "Josefin Sans", sans-serif;
@@ -179,7 +245,9 @@ footer {
   height: 100%;
 }
 .aside-img-desk {
+  -o-object-fit: contain;
   object-fit: contain;
+  -o-object-position: top right;
   object-position: top right;
 }
 .aside-img-mob {
@@ -188,8 +256,16 @@ footer {
 /* FOOTER ============================= */
 .footer-nav {
   height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
   justify-content: flex-end;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
   align-content: stretch;
   background-color: var(--clr-secondary);
   padding: 0 2rem;
@@ -213,7 +289,9 @@ footer {
 /* MID */
 @media screen and (max-width: 1265px) and (min-width: 769px) {
   .container {
+    -ms-grid-columns: 1fr 1fr;
     grid-template-columns: 1fr 1fr;
+    -ms-grid-rows: 20vh 75vh 5vh;
     grid-template-rows: 20vh 75vh 5vh;
     grid-template-areas:
       "h h"
@@ -225,6 +303,7 @@ footer {
     padding-left: 5vw;
   }
   .aside-img-desk {
+    -o-object-position: top right;
     object-position: top right;
   }
   .main-text {
@@ -237,15 +316,40 @@ footer {
   .email-btn {
     height: 55px;
   }
+  header {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+  }
+  main {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+  }
+  aside {
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 2;
+  }
+  footer {
+    -ms-grid-row: 3;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+  }
 }
 /* MOBILE */
 @media screen and (max-width: 768px) {
   .container {
+    background-image: -o-linear-gradient(
+      315deg,
+      hsl(0, 0%, 100%),
+      hsl(0, 100%, 98%)
+    );
     background-image: linear-gradient(
       135deg,
       hsl(0, 0%, 100%),
       hsl(0, 100%, 98%)
     );
+    -ms-grid-rows: 10vh 85vh 5vh;
     grid-template-rows: 10vh 85vh 5vh;
     grid-template-areas:
       "h h"
@@ -257,6 +361,9 @@ footer {
   }
   .header-nav {
     padding: 0;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
     justify-content: center;
   }
   /* main */
@@ -285,6 +392,7 @@ footer {
   }
   .aside-img-mob {
     display: block;
+    -o-object-fit: contain;
     object-fit: contain;
     max-width: 600px;
     height: auto;
@@ -293,10 +401,28 @@ footer {
   /* footer */
   .footer-nav {
     padding: 0 0.5rem;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
     justify-content: center;
   }
   .footer-text {
     text-align: center;
     font-size: 0.5rem;
+  }
+  header {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+  }
+  main {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+  }
+  footer {
+    -ms-grid-row: 3;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
   }
 }
