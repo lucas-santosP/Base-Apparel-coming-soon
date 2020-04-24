@@ -35,9 +35,9 @@ body {
   z-index: -5;
   background-image: url("../assets/images/bg-pattern-desktop.svg");
   background-size: cover;
-  background-position: top left;
+  background-position: left;
   padding: 0;
-  opacity: 0.6;
+  opacity: 1;
 }
 .container {
   display: -ms-grid;
