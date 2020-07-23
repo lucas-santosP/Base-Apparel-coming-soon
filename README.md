@@ -6,7 +6,7 @@
 
 ## Demo
 
-Demonstration online by [GitHub Pages](https://pages.github.com) on this [link](https://lucas-santosp.github.io/Base-Apparel-coming-soon/).
+Demonstration online by [GitHub Pages](https://pages.github.com) on this [link](https://lucas-santosp.github.io/base-apparel-coming-soon/).
 
 ## License
 
